@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAthIjIRZOFnK2nTBpAwF5pDy1REp6LfA0",
+  apiKey: process.env.REACT_APP_API_KEY,
   authDomain: "burgerbin-app.firebaseapp.com",
   projectId: "burgerbin-app",
   storageBucket: "burgerbin-app.appspot.com",

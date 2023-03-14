@@ -20,8 +20,8 @@ export default function BasicTextFields({title, setPassword, setEmail, handleAct
                 noValidate
                 autoComplete="off"
             >
-                <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} />
-                <TextField id='password' label='Password' variant='outlined' onChange={(e) => setPassword(e.target.value)} />
+                <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} required/>
+                <TextField id='password' label='Password' variant='outlined' onChange={(e) => setPassword(e.target.value)} required/>
             </Box>
 
             <Button title={title} handleAction={handleAction} />

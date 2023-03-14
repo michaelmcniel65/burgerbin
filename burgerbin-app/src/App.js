@@ -1,7 +1,8 @@
 import './App.css';
-import Form from './components/common/Form';
+import Login from './components/common/Login';
 import Home from "./components/Home"
 import StartPage from './components/StartPage';
+import Signup from './components/common/Signup';
 import { BrowserRouter as Router,
   Routes,
   Route,
@@ -64,8 +65,8 @@ function App() {
           <ToastContainer />
           <Routes>
             <Route path='/' element={<StartPage />} />
-            <Route path='/login' element={<Form title="Login" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(1)} />} />
-            <Route path='/register' element={<Form title="Sign Up" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(2)} />} />
+            <Route path='/login' element={<Login title="Login" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(1)} />} />
+            <Route path='/register' element={<Signup title="Sign Up" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(2)} />} />
             <Route path='/home' element={<Home />} />
           </Routes>
         </>

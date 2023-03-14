@@ -8,7 +8,7 @@ export default function BasicTextFields({title, setPassword, setEmail, handleAct
         <div>
             <div className='heading-container'>
                 <h3>
-                    {title}
+                    Sing up for more!
                 </h3>
             </div>
             

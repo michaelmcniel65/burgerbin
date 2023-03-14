@@ -6,7 +6,7 @@ export default function StartPage() {
 
     return (
     <>
-        
+        <div className="start-background"></div>
         <button className="start-button text-white bg-gradient-to-r from-red-400 
             via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 
             focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 

@@ -28,3 +28,5 @@ export default function BasicTextFields({title, setPassword, setEmail, handleAct
         </div>
     );
 }
+
+{/* Need to design sign up page, then redirect to a profile setup page (i.e. username, picture, etc...) */}

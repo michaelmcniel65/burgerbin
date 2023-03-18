@@ -5,7 +5,7 @@ export default function StartPage() {
     let navigate = useNavigate();
 
     return (
-    <>
+    <div className="w-screen">
         <div className="start-background z-[-1]
             bg-gradient-to-tl from-yellow-600 to-red-600"></div>
         
@@ -14,11 +14,13 @@ export default function StartPage() {
                 <div className="information-div">
                     <img className="p-5" 
                     src="./burgerbinlogo.png"
+                    alt="BurgerBin Logo"
                     />
                     <div className="flex flex-col items-center">
                         <h1 className="text-6xl p-5 text-white">A social media site for burgers...by burgers.</h1>
                         <img className="w-10/12 h-10/12 p-3"
                         src="./startburger.png"
+                        alt="A group of burgers! Mmmm!"
                         />
                     </div>
                 </div>
@@ -27,7 +29,10 @@ export default function StartPage() {
                 <div className="button-div flex flex-col justify-evenly items-center w-[27rem] h-[30rem] bg-white
                     rounded-2xl">
                     <h1 className="p-5 text-4xl text-black">Join the fun today!</h1>
-                    <img className="w-1/2 h-auto" src="/startburgermascot.png"/>
+                    <img className="w-1/2 h-auto" 
+                    src="/startburgermascot.png"
+                    alt="A little burger mascot"
+                    />
                     <div>
                         <button className="start-button text-white bg-gradient-to-r from-blue-400 
                             via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 
@@ -49,6 +54,6 @@ export default function StartPage() {
         <div className="flex justify-center">
             <div className="pt-10 pb-10 h-20 text-center text-white w-4/5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
         </div>
-    </>
+    </div>
     )
 }

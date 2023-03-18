@@ -1,32 +1,55 @@
 import * as React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { TextField } from '@mui/material/';
 import Button from './Button';
 
 export default function BasicTextFields({title, setPassword, setEmail, handleAction}) {
+    let navigate = useNavigate();
     return (
-        <div>
-            <div className='heading-container'>
-                <h3>
-                    Login for fun!
-                </h3>
-            </div>
-            
-            <Box
-                component="form"
-                sx={{
-                    '& > :not(style)': { m: 1, width: '25ch' },
-                }}
-                noValidate
-                autoComplete="off"
-            >
-                <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} required/>
-                <TextField id='password' label='Password' variant='outlined' onChange={(e) => setPassword(e.target.value)} required/>
-            </Box>
-
-            <Button title={title} handleAction={handleAction} />
+        <>
+        <div className="start-background z-[-1]
+            bg-gradient-to-tl from-yellow-600 to-red-600"></div>
+        <div className='heading-container text-4xl text-white p-20'>
+            <h3 className='pb-10'>
+                Welcome back! Please login to continue.
+            </h3>
+            <button className='start-button text-white bg-gradient-to-r from-blue-400 
+                            via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 
+                            focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 
+                            shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 
+                            font-medium rounded-lg text-xl px-5 py-2.5 text-center mr-2 mb-2' 
+                            onClick={() => navigate('/')}>GO BACK</button>
         </div>
+        <div className='flex justify-center items-center'>
+            <div className='rounded-2xl bg-white flex justify-center items-center w-[27rem] h-[30rem]'>
+                <div>
+                    <img
+                    className='w-[15rem] h-auto'
+                    src='https://thumbs.gfycat.com/SmoothIdolizedAllosaurus-size_restricted.gif'
+                    alt='a floating burger'
+                    />
+                    <p>Need to <span className='underline'><Link to='/register'>create an account?</Link></span></p>
+                    <Box
+                        component="form"
+                        sx={{
+                            '& > :not(style)': { m: 1, width: '25ch' },
+                        }}
+                        noValidate
+                        autoComplete="off"
+                    >
+                        <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} required/>
+                        <br/>
+                        <TextField id='password' label='Password' variant='outlined' onChange={(e) => setPassword(e.target.value)} required/>
+                    </Box>
+
+                    <Button title={title} handleAction={handleAction} />
+                </div>
+            </div>
+        </div>
+        <div className="flex justify-center">
+            <div className="pt-10 pb-[10rem] h-20 text-center text-white w-4/5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </div>
+        </>
     );
 }
-
-{/* Need to design login page */}

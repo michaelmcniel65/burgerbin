@@ -10,9 +10,9 @@ export default function BasicTextFields({title, setPassword, setEmail, handleAct
         <>
         <div className="start-background z-[-1]
             bg-gradient-to-tl from-yellow-600 to-red-600"></div>
-        <div className='heading-container text-4xl text-white p-20'>
+        <div className='heading-container text-4xl text-white pt-20 pb-7'>
             <h3 className='pb-10'>
-                Welcome back! Please login to continue.
+                Welcome back! Please <span className='font-bold'>LOGIN</span> to continue.
             </h3>
             <button className='start-button text-white bg-gradient-to-r from-blue-400 
                             via-blue-500 to-blue-600 hover:bg-gradient-to-br focus:ring-4 
@@ -38,9 +38,9 @@ export default function BasicTextFields({title, setPassword, setEmail, handleAct
                         noValidate
                         autoComplete="off"
                     >
-                        <TextField id="email" label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} required/>
+                        <TextField id="email" type='email' label="Email" variant="outlined" onChange={(e) => setEmail(e.target.value)} required/>
                         <br/>
-                        <TextField id='password' label='Password' variant='outlined' onChange={(e) => setPassword(e.target.value)} required/>
+                        <TextField id='password' type='password' label='Password' variant='outlined' onChange={(e) => setPassword(e.target.value)} required/>
                     </Box>
 
                     <Button title={title} handleAction={handleAction} />

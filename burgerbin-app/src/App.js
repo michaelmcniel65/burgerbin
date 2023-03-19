@@ -16,6 +16,7 @@ import { getAuth,
 } from 'firebase/auth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProfilePage from './components/ProfilePage';
 
 function App() {
   const [email, setEmail] = useState('');
@@ -68,6 +69,7 @@ function App() {
             <Route path='/login' element={<Login title="Login" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(1)} />} />
             <Route path='/register' element={<Signup title="Sign Up" setEmail={setEmail} setPassword={setPassword} handleAction={() => handleAction(2)} />} />
             <Route path='/home' element={<Home />} />
+            <Route path='/profile' element={<ProfilePage />} />
           </Routes>
         </>
       </div>

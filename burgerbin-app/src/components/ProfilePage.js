@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Home() {
+export default function ProfilePage() {
     let navigate = useNavigate();
     useEffect(() => {
         let authToken = sessionStorage.getItem('Auth Token')
 
         if (authToken) {
-            navigate('/home')
+            navigate('/profile')
         }
         if (!authToken) {
             navigate('/login')
@@ -21,11 +21,8 @@ export default function Home() {
 
     return (
         <div>
-            Home Page
+            Profile
             <button onClick={handleLogout}>Log out</button>
-            <button onClick={() => navigate('/profile')}>Profile</button>
         </div>
     )
 }
-
-/*Need to start working on profile functionality, specifcally make a profile editor page*/

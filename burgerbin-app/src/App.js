@@ -36,7 +36,7 @@ function App() {
     if (id === 2) {
       createUserWithEmailAndPassword(authentication, email, password)
         .then((response) => {
-          navigate('/home')
+          navigate('/profile')
           sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
         }).catch((error) => {
           if(error.code === 'auth/email-already-in-use') {

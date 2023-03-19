@@ -26,3 +26,5 @@ export default function Home() {
         </div>
     )
 }
+
+/*Need to start working on profile functionality, specifcally make a profile editor page*/

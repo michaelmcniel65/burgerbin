@@ -22,7 +22,7 @@ export default function Home() {
 
     return (
         <div>
-            <Navbar page='HOME'/>
+            <Navbar />
             Home Page
             <button onClick={handleLogout}>Log out</button>
             <button onClick={() => navigate('/profile')}>Profile</button>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./common/Navbar";
 
 export default function Home() {
     let navigate = useNavigate();
@@ -21,6 +22,7 @@ export default function Home() {
 
     return (
         <div>
+            <Navbar page='HOME'/>
             Home Page
             <button onClick={handleLogout}>Log out</button>
             <button onClick={() => navigate('/profile')}>Profile</button>

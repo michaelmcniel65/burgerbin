@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAuth } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 import Navbar from "./common/Navbar";
 
 export default function ProfilePage() {
@@ -31,7 +31,7 @@ export default function ProfilePage() {
 
     return (
         <div>
-            <Navbar page='PROFILE'/>
+            <Navbar />
             Profile
             <button onClick={handleLogout}>Log out</button>
             <img className="w-auto h-auto" src={photoURL}/>

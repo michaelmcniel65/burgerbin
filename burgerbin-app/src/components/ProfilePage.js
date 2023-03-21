@@ -59,7 +59,7 @@ export default function ProfilePage() {
         try {
             event.preventDefault();
             await updateProfile(auth.currentUser, {
-                displayName: name, photoURL: proPic
+                displayName: name, photoURL: photoURL
             });
             return console.log(displayName)
         } catch(error) {

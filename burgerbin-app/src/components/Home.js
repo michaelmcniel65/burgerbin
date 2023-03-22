@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import StandardImageList from "./common/ImageList";
 import Navbar from "./common/Navbar";
 import Upload from "./common/Upload";
 
@@ -28,6 +29,9 @@ export default function Home() {
             <button onClick={handleLogout}>Log out</button>
             <button onClick={() => navigate('/profile')}>Profile</button>
             <Upload />
+            <div className="flex justify-center">
+                <StandardImageList />
+            </div>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import { Avatar, Tooltip } from '@mui/material';
 
 export default function StandardImageList() {
   return (
@@ -14,6 +15,16 @@ export default function StandardImageList() {
             alt={item.title}
             loading="lazy"
           />
+          <Tooltip
+            title='User Name'
+            sx={{
+                position: 'absolute',
+                bottom: '3px',
+                right: '3px',
+            }}
+          >
+            <Avatar src='startburger.png' />
+          </Tooltip>
         </ImageListItem>
       ))}
     </ImageList>

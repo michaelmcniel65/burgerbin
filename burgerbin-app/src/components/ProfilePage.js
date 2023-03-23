@@ -30,9 +30,6 @@ export default function ProfilePage() {
         navigate('/login')
     }
 
-    /*this is where you left off. 15:00 mark on video "code like pro react updating user profile part 4" */
-    /*Need to watch part 1 and stuff */
-
     return (
         <div>
             <Navbar />

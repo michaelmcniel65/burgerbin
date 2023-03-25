@@ -3,15 +3,35 @@ import { ImageListItem } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import CircularProgressWithLabel from "./CircularProgressWithLabel";
+import { v4 as uuidv4 } from 'uuid'
+import uploadFileProgress from "../../uploadFileProgress";
 
 export default function ProgressItem({file}) {
-    const [progress, setProgress] = useState(50);
+    const [progress, setProgress] = useState(100);
     const [imageURL, setImageURL] = useState(null);
+    const currentUser = {uid:'userId'}
     useEffect(() => {
+        const uploadImage = async() => {
+            const imageName = uuidv4() + "." + file.name.split('.').pop()
+            try {
+                const url = await uploadFileProgress(
+                    file,
+                    `gallery/${currentUser.uid}`,
+                    imageName,
+                    setProgress
+                )
+                console.log(url)
+                setImageURL(null)
+            } catch (error) {
+                alert(error.message)
+                console.log(error)
+            }
+        }
         setImageURL(URL.createObjectURL(file))
+        uploadImage();
     }, [file])
     return (
-        <ImageListItem cols={1} rows={1}>
+        imageURL && <ImageListItem cols={1} rows={1}>
             <img src={imageURL} alt="gallery" loading="lazy"/>
             <Box sx={backDrop}>
                 {progress < 100 ? (

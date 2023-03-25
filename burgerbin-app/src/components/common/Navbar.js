@@ -16,9 +16,6 @@ export default function Navbar() {
                 <h1 className='text-white text-3xl pr-5'>PROFILE</h1>
                 <h1 className='text-white text-3xl pr-5'>GAMES</h1>
             </div>
-            <div>
-                <h1>{user.displayName}</h1>
-            </div>
         </div>
         </>
     )

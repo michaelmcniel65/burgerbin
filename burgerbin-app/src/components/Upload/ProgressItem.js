@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import CircularProgressWithLabel from "./CircularProgressWithLabel";
 import { v4 as uuidv4 } from 'uuid'
 import uploadFileProgress from "../../uploadFileProgress";
+import addDocument from "../../addDocument";
 
 export default function ProgressItem({file}) {
     const [progress, setProgress] = useState(100);
@@ -20,8 +21,15 @@ export default function ProgressItem({file}) {
                     imageName,
                     setProgress
                 )
-                console.log(url)
-                setImageURL(null)
+                const galleryDoc = {
+                    imageURL: url,
+                    uid: currentUser.uid,
+                    uEmail: 'test@test.com',
+                    uName: 'Anon',
+                    uPhoto: ''
+                }
+                await addDocument('gallery', galleryDoc, imageName)
+                setImageURL(null);
             } catch (error) {
                 alert(error.message)
                 console.log(error)

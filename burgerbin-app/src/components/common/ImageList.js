@@ -43,7 +43,7 @@ export default function StandardImageList() {
               borderTopRightRadius: 8,
             }}
           >
-            {moment(new Date() - 500 * 60 * 60).fromNow()}
+            {moment(item?.data?.timestamp?.toDate()).fromNow()}
           </Typography>
         </ImageListItem>
       ))}

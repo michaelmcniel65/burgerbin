@@ -2,7 +2,7 @@ import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { Avatar, Tooltip, Typography } from '@mui/material';
-import useFirestore from '../../useFirestore';
+import useFirestore from '../../firebase/useFirestore';
 import moment from 'moment';
 import ImageOptions from './ImageOptions';
 

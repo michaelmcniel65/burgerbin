@@ -9,7 +9,7 @@ import { BrowserRouter as Router,
   useNavigate
 } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { app } from './firebase-config';
+import { app } from './firebase/firebase-config';
 import { getAuth, 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword 

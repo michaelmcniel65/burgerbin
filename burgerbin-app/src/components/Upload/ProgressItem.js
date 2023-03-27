@@ -4,8 +4,8 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import CircularProgressWithLabel from "./CircularProgressWithLabel";
 import { v4 as uuidv4 } from 'uuid'
-import uploadFileProgress from "../../uploadFileProgress";
-import addDocument from "../../addDocument";
+import uploadFileProgress from "../../firebase/uploadFileProgress";
+import addDocument from "../../firebase/addDocument";
 
 export default function ProgressItem({file}) {
     const [progress, setProgress] = useState(100);

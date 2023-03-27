@@ -35,4 +35,6 @@ export default function StandardImageList() {
 
 {/*add options and timestamp check part 1 and then check part 2 50 minutes in to connect it to firebase for accuracy 
 left off at last section of part 2 "deleting images" need to add options and timestamp first
-before we get too ahead of ourselves */}
+before we get too ahead of ourselves 
+
+changing just to put something for sunday*/}

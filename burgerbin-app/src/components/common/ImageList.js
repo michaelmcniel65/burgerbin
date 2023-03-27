@@ -1,8 +1,9 @@
 import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { Avatar, Tooltip } from '@mui/material';
+import { Avatar, Tooltip, Typography } from '@mui/material';
 import useFirestore from '../../useFirestore';
+import moment from 'moment';
 
 export default function StandardImageList() {
   const {documents} = useFirestore('gallery')
@@ -27,6 +28,21 @@ export default function StandardImageList() {
           >
             <Avatar src={item?.data?.uPhoto} />
           </Tooltip>
+          <Typography
+            variant='body2'
+            component='span'
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              color: 'white',
+              background: 'rgba(0, 0, 0, .3)',
+              p: '5px',
+              borderTopRightRadius: 8,
+            }}
+          >
+            {moment(new Date() - 500 * 60 * 60).fromNow()}
+          </Typography>
         </ImageListItem>
       ))}
     </ImageList>

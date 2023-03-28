@@ -13,7 +13,7 @@ export default function StandardImageList() {
       {documents.map((item) => (
         <ImageListItem key={item?.id}
         className="w-[25rem] object-cover">
-          <ImageOptions />
+          <ImageOptions imageId={item?.data?.imageId}/> {/*this gave me such a headache wow*/}
           <img
             src={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}

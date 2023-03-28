@@ -7,11 +7,9 @@ import Tooltip from '@mui/material/Tooltip';
 import { IconButton } from '@mui/material';
 import { Delete, MoreVert } from '@mui/icons-material';
 import deleteFile from '../../firebase/deleteFile';
-import { db } from '../../firebase/firebase-config';
-import { deleteDoc, doc, getDoc, collection } from 'firebase/firestore';
 import deleteDocument from '../../firebase/deleteDocument';
 
-export default function ImageOptions() {
+export default function ImageOptions({imageId}) {
 const [anchorEl, setAnchorEl] = React.useState(null);
 const open = Boolean(anchorEl);
 const currentUser = { uid: 'userId' };
@@ -22,13 +20,9 @@ const handleClose = () => {
     setAnchorEl(null);
 };
 const handleDelete = async () => {
-    const collectionTest = collection(db, 'gallery');
-    const newDocRef = doc(collectionTest);
-    const newDocId = newDocRef.id
-    console.log(newDocId)
     try {
-    await deleteDocument('gallery', newDocId);
-    await deleteFile(`gallery/${currentUser.uid}/${newDocId}`);
+    await deleteDocument('gallery', imageId);
+    await deleteFile(`gallery/${currentUser.uid}/${imageId}`);
     } catch (error) {
     alert(error.message);
     console.log(error);

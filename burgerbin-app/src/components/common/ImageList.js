@@ -9,11 +9,14 @@ import ImageOptions from './ImageOptions';
 export default function StandardImageList() {
   const {documents} = useFirestore('gallery')
   return (
-    <ImageList cols={1} rowHeight={400}>
+    <div className='border-[5px] border-black flex'>
+    <ImageList
+      cols={1} rowHeight={400} gap={20}
+    >
       {documents.map((item) => (
         <ImageListItem key={item?.id}
         className="w-[25rem] object-cover">
-          <ImageOptions imageId={item?.data?.imageId}/> {/*this gave me such a headache wow*/}
+          <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
           <img
             src={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -48,6 +51,7 @@ export default function StandardImageList() {
         </ImageListItem>
       ))}
     </ImageList>
+    </div>
   );
 }
 

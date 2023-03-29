@@ -5,6 +5,12 @@
 /* GOOGLE FONTS
 /* font-family: 'Roboto Condensed', sans-serif; */
 
+html,body
+{
+    width: 100%;
+    overflow-x: hidden; 
+}
+
 body {
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif;

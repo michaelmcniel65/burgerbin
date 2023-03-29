@@ -9,13 +9,20 @@ import ImageOptions from './ImageOptions';
 export default function StandardImageList() {
   const {documents} = useFirestore('gallery')
   return (
-    <div className='border-[5px] border-black flex'>
+    <div className='border-[3px] w-full flex justify-center'>
+    <div className='border-[5px] border-black'>
     <ImageList
       cols={1} rowHeight={400} gap={20}
+      sx={{
+        width: 'auto',
+        maxWidth: 400,
+        objectFit: 'cover',
+        gridTemplateColumns:
+          'repeat(1, minmax(0, 1fr))!important',
+      }}
     >
       {documents.map((item) => (
-        <ImageListItem key={item?.id}
-        className="w-[25rem] object-cover">
+        <ImageListItem key={item?.id}>
           <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
           <img
             src={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format`}
@@ -51,6 +58,7 @@ export default function StandardImageList() {
         </ImageListItem>
       ))}
     </ImageList>
+    </div>
     </div>
   );
 }

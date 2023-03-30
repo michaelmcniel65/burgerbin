@@ -27,7 +27,9 @@ export default function ProgressItem({file}) {
                     uEmail: 'test@test.com',
                     uName: 'Anon',
                     uPhoto: '',
-                    imageId: imageName
+                    imageId: imageName,
+                    likes: 0,
+                    dislikes: 0
                 }
                 await addDocument('gallery', galleryDoc, imageName)
                 setImageURL(null);

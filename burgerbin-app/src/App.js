@@ -62,7 +62,6 @@ function App() {
 
   return (
       <div className='App'>
-        <>
           <ToastContainer />
           <Routes>
             <Route path='/' element={<StartPage />} />
@@ -71,7 +70,6 @@ function App() {
             <Route path='/home' element={<Home />} />
             <Route path='/profile' element={<ProfilePage />} />
           </Routes>
-        </>
       </div>
   );
 }

@@ -37,7 +37,7 @@ export default function StandardImageList() {
             </Tooltip>
             <h1 className='p-4'>{item?.data?.uName}</h1>
           </div>
-          <div>
+          <div className='p-2'>
             <ImageListItem>
               <ImageOptions imageId={item?.data?.imageId}/>
             </ImageListItem>

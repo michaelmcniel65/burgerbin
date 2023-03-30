@@ -23,21 +23,28 @@ export default function StandardImageList() {
     >
       {documents.map((item) => (
         <>
-        <div className='h-[50px] bg-gray-400 rounded-t-3xl flex'>
-        <Tooltip
-            title={item?.data?.uName || item?.data?.uEmail}
-            sx={{
-                border: 'solid black 2px',
-                top: '5px',
-                left: '5px',
-            }}
-          >
-            <Avatar src={item?.data?.uPhoto} />
-        </Tooltip>
-        <h1 className='p-4'>{item?.data?.uName}</h1>
+        <div className='h-[50px] bg-gray-400 rounded-t-3xl flex justify-between'>
+          <div className='flex flex-row'>
+            <Tooltip
+                title={item?.data?.uName || item?.data?.uEmail}
+                sx={{
+                    border: 'solid black 2px',
+                    top: '5px',
+                    left: '5px',
+                }}
+              >
+                <Avatar src={item?.data?.uPhoto} />
+            </Tooltip>
+            <h1 className='p-4'>{item?.data?.uName}</h1>
+          </div>
+          <div>
+            <ImageListItem>
+              <ImageOptions imageId={item?.data?.imageId}/>
+            </ImageListItem>
+          </div>
         </div>
         <ImageListItem key={item?.id}>
-          <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
+           {/*Problem 1 (marked in notes)*/}
           <img
             src={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
@@ -68,9 +75,3 @@ export default function StandardImageList() {
     </div>
   );
 }
-
-{/*add options and timestamp check part 1 and then check part 2 50 minutes in to connect it to firebase for accuracy 
-left off at last section of part 2 "deleting images" need to add options and timestamp first
-before we get too ahead of ourselves 
-
-changing just to put something for sunday*/}

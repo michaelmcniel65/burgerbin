@@ -36,13 +36,13 @@ return (
             onClick={handleClick}
             sx={{
             position: 'absolute',
-            right: 0,
-            top: 0,
+            right: 5,
+            top: 5,
             color: 'white',
             background: 'rgba(0,0,0,.3)',
             }}
         >
-            <MoreVert fontSize="large" />
+            <MoreVert fontSize="medium" />
         </IconButton>
         </Tooltip>
     </Box>

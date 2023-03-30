@@ -23,7 +23,19 @@ export default function StandardImageList() {
     >
       {documents.map((item) => (
         <>
-        <div className='h-[40px] bg-red-900'>top</div>
+        <div className='h-[50px] bg-gray-400 rounded-t-3xl flex'>
+        <Tooltip
+            title={item?.data?.uName || item?.data?.uEmail}
+            sx={{
+                border: 'solid black 2px',
+                top: '5px',
+                left: '5px',
+            }}
+          >
+            <Avatar src={item?.data?.uPhoto} />
+        </Tooltip>
+        <h1 className='p-4'>{item?.data?.uName}</h1>
+        </div>
         <ImageListItem key={item?.id}>
           <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
           <img
@@ -32,16 +44,6 @@ export default function StandardImageList() {
             alt={item?.data?.uName || item?.data?.uEmail}
             loading="lazy"
           />
-          <Tooltip
-            title={item?.data?.uName || item?.data?.uEmail}
-            sx={{
-                position: 'absolute',
-                bottom: '3px',
-                right: '3px',
-            }}
-          >
-            <Avatar src={item?.data?.uPhoto} />
-          </Tooltip>
           <Typography
             variant='body2'
             component='span'
@@ -58,7 +60,7 @@ export default function StandardImageList() {
             {moment(item?.data?.timestamp?.toDate()).fromNow()}
           </Typography>
         </ImageListItem>
-        <div className='h-[40px] bg-green-900 mb-5'>bottom</div>
+        <div className='h-[70px] bg-gray-400 rounded-b-3xl mb-5'></div>
         </>
       ))}
     </ImageList>

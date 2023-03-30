@@ -23,12 +23,11 @@ export default function StandardImageList() {
     >
       {documents.map((item) => (
         <>
-        <div className='h-[50px] bg-gray-400 rounded-t-3xl flex justify-between'>
+        <div className='h-[50px] bg-gray-200 rounded-t-3xl flex justify-between'>
           <div className='flex flex-row'>
             <Tooltip
                 title={item?.data?.uName || item?.data?.uEmail}
                 sx={{
-                    border: 'solid black 2px',
                     top: '5px',
                     left: '5px',
                 }}
@@ -67,7 +66,7 @@ export default function StandardImageList() {
             {moment(item?.data?.timestamp?.toDate()).fromNow()}
           </Typography>
         </ImageListItem>
-        <div className='h-[70px] bg-gray-400 rounded-b-3xl mb-5'></div>
+        <div className='h-[70px] bg-gray-200 rounded-b-3xl mb-5'></div>
         </>
       ))}
     </ImageList>

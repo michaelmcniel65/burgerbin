@@ -9,10 +9,10 @@ import ImageOptions from './ImageOptions';
 export default function StandardImageList() {
   const {documents} = useFirestore('gallery')
   return (
-    <div className='border-[3px] w-full flex justify-center'>
-    <div className='border-[5px] border-black'>
+    <div className='w-full flex justify-center'>
+    <div>
     <ImageList
-      cols={1} rowHeight={400} gap={20}
+      cols={1} rowHeight={400} gap={0}
       sx={{
         width: 'auto',
         maxWidth: 400,
@@ -22,6 +22,8 @@ export default function StandardImageList() {
       }}
     >
       {documents.map((item) => (
+        <>
+        <div className='h-[40px] bg-red-900'>top</div>
         <ImageListItem key={item?.id}>
           <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
           <img
@@ -56,6 +58,8 @@ export default function StandardImageList() {
             {moment(item?.data?.timestamp?.toDate()).fromNow()}
           </Typography>
         </ImageListItem>
+        <div className='h-[40px] bg-green-900 mb-5'>bottom</div>
+        </>
       ))}
     </ImageList>
     </div>

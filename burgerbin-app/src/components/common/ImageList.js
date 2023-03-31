@@ -38,12 +38,11 @@ export default function StandardImageList() {
           </div>
           <div className='p-2'>
             <ImageListItem>
-              <ImageOptions imageId={item?.data?.imageId}/>
+              <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
             </ImageListItem>
           </div>
         </div>
         <ImageListItem key={item?.id}>
-           {/*Problem 1 (marked in notes)*/}
           <img
             src={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format`}
             srcSet={`${item?.data?.imageURL}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}

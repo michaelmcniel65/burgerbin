@@ -38,7 +38,7 @@ export default function StandardImageList() {
           </div>
           <div className='p-2'>
             <ImageListItem>
-              <ImageOptions imageId={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
+              <ImageOptions imageIdProp={item?.data?.imageId}/> {/*Problem 1 (marked in notes)*/}
             </ImageListItem>
           </div>
         </div>

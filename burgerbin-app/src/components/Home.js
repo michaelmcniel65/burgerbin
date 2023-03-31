@@ -36,4 +36,4 @@ export default function Home() {
     )
 }
 
-/*Need to start working on profile functionality, specifcally make a profile editor page*/
+/*Need to start working on profile functionality, specifcally make a profile editor page adding for thursday*/
